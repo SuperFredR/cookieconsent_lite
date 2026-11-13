@@ -1,0 +1,6 @@
+name: 'Cookie Consent Lite'
+type: module
+description: 'Minimal cookie consent banner: Google Analytics 4 loads only after the visitor accepts.'
+core_version_requirement: ^10.3 || ^11
+'interface translation project': cookieconsent_lite
+configure: cookieconsent_lite.settings

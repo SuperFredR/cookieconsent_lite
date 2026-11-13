@@ -1,0 +1,9 @@
+{
+    "name": "superfredr/cookieconsent_lite",
+    "description": "Minimal Drupal cookie consent banner: Google Analytics 4 loads only after the visitor accepts.",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "drupal/core": "^10.3 || ^11"
+    }
+}

@@ -1,0 +1,49 @@
+cookieconsent_lite.settings:
+  type: config_object
+  label: 'Cookie Consent Lite settings'
+  mapping:
+    title:
+      type: label
+      label: 'Title'
+    message:
+      type: text
+      label: 'Message'
+      constraints:
+        NotBlank: []
+    accept_text:
+      type: label
+      label: 'Accept button'
+      constraints:
+        NotBlank: []
+    decline_text:
+      type: label
+      label: 'Decline button'
+      constraints:
+        NotBlank: []
+    read_more_text:
+      type: label
+      label: 'Read more link text'
+    read_more_url:
+      type: string
+      label: 'Read more link URL'
+      translatable: true
+      form_element_class: '\Drupal\config_translation\FormElement\Textarea'
+      constraints:
+        Regex:
+          pattern: '/^(\/(?!\/)|https?:\/\/)/i'
+          message: 'Use an internal path starting with / or a full http(s) URL.'
+    expiry_days:
+      type: integer
+      label: 'Consent lifetime in days'
+      constraints:
+        NotNull: []
+        Range:
+          min: 1
+          max: 395
+    measurement_id:
+      type: string
+      label: 'Google Analytics 4 measurement ID'
+      constraints:
+        Regex:
+          pattern: '/^G-[A-Z0-9]+$/'
+          message: 'The measurement ID looks like G-XXXXXXXXXX.'

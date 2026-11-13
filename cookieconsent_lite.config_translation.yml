@@ -1,0 +1,5 @@
+cookieconsent_lite.settings:
+  title: 'Cookie Consent Lite'
+  base_route_name: cookieconsent_lite.settings
+  names:
+    - cookieconsent_lite.settings

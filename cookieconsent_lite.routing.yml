@@ -1,0 +1,7 @@
+cookieconsent_lite.settings:
+  path: '/admin/config/system/cookieconsent-lite'
+  defaults:
+    _form: '\Drupal\cookieconsent_lite\Form\SettingsForm'
+    _title: 'Cookie Consent Lite'
+  requirements:
+    _permission: 'administer cookieconsent lite'

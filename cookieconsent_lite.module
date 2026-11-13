@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Cookie consent banner that gates Google Analytics 4.
+ */
+
+use Drupal\Core\Cache\CacheableMetadata;
+use Drupal\Core\Config\ImmutableConfig;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_page_attachments().
+ */
+function cookieconsent_lite_page_attachments(array &$attachments): void {
+  if (\Drupal::service('router.admin_context')->isAdminRoute()) {
+    return;
+  }
+  $config = \Drupal::config('cookieconsent_lite.settings');
+  // Only anonymous visitors are measured, so only they are asked.
+  $cacheability = CacheableMetadata::createFromRenderArray($attachments)
+    ->addCacheContexts(['user.roles:anonymous'])
+    ->addCacheableDependency($config);
+  $settings = \Drupal::currentUser()->isAnonymous() && $config->get('measurement_id')
+    ? cookieconsent_lite_banner_settings($config, $cacheability)
+    : NULL;
+  $cacheability->applyTo($attachments);
+
+  if ($settings) {
+    $attachments['#attached']['library'][] = 'cookieconsent_lite/banner';
+    $attachments['#attached']['drupalSettings']['cookieconsentLite'] = $settings;
+  }
+}
+
+/**
+ * Builds the banner's drupalSettings.
+ */
+function cookieconsent_lite_banner_settings(ImmutableConfig $config, CacheableMetadata $cacheability): array {
+  $read_more_url = trim($config->get('read_more_url') ?? '');
+  // Translations skip schema validation: anything but http(s) is a local path.
+  if ($read_more_url !== '' && !preg_match('#^https?://#i', $read_more_url)) {
+    $generated = Url::fromUserInput('/' . ltrim($read_more_url, '/'))->toString(TRUE);
+    $cacheability->addCacheableDependency($generated);
+    $read_more_url = $generated->getGeneratedUrl();
+  }
+
+  return [
+    'title' => $config->get('title'),
+    'message' => $config->get('message'),
+    'acceptText' => $config->get('accept_text'),
+    'declineText' => $config->get('decline_text'),
+    'readMoreText' => $config->get('read_more_text'),
+    'readMoreUrl' => $read_more_url,
+    'expiryDays' => $config->get('expiry_days'),
+    'measurementId' => $config->get('measurement_id'),
+  ];
+}
+
+/**
+ * Implements hook_locale_translation_projects_alter().
+ */
+function cookieconsent_lite_locale_translation_projects_alter(array &$projects): void {
+  if (isset($projects['cookieconsent_lite'])) {
+    $path = \Drupal::service('extension.list.module')->getPath('cookieconsent_lite');
+    $projects['cookieconsent_lite']['info']['interface translation server pattern'] = $path . '/translations/%language.po';
+  }
+}

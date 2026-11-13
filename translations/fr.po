@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cookieconsent_lite\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Minimal cookie consent banner: Google Analytics 4 loads only after the visitor accepts."
+msgstr "Bandeau de consentement cookies minimal : Google Analytics 4 ne se charge qu'après l'accord du visiteur."
+
+msgid "Cookie consent"
+msgstr "Consentement aux cookies"
+
+msgid "Fancy a cookie?"
+msgstr "Un petit cookie ?"
+
+msgid "We use cookies to measure site traffic. Do you accept them?"
+msgstr "Nous utilisons des cookies pour mesurer l'audience du site. Les acceptez-vous ?"
+
+msgid "Accept"
+msgstr "Accepter"
+
+msgid "Decline"
+msgstr "Refuser"
+
+msgid "Read more"
+msgstr "En savoir plus"
+
+msgid "Cookie Consent Lite settings"
+msgstr "Réglages de Cookie Consent Lite"
+
+msgid "Banner texts and Google Analytics 4 measurement ID."
+msgstr "Textes du bandeau et identifiant de mesure Google Analytics 4."
+
+msgid "Administer the cookie consent banner"
+msgstr "Administrer le bandeau de consentement aux cookies"
+
+msgid "Google Analytics 4 measurement ID"
+msgstr "Identifiant de mesure Google Analytics 4"
+
+msgid "For example G-XXXXXXXXXX. The banner is hidden while this is empty."
+msgstr "Par exemple G-XXXXXXXXXX. Le bandeau reste masqué tant que ce champ est vide."
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Accept button"
+msgstr "Bouton Accepter"
+
+msgid "Decline button"
+msgstr "Bouton Refuser"
+
+msgid "Read more link text"
+msgstr "Texte du lien « En savoir plus »"
+
+msgid "Read more link URL"
+msgstr "Adresse du lien « En savoir plus »"
+
+msgid "An internal path such as /privacy or a full URL. The link shows only when both its URL and its text are filled in."
+msgstr "Un chemin interne comme /vie-privee ou une adresse complète. Le lien n'apparaît que si son adresse et son texte sont remplis."
+
+msgid "Consent lifetime"
+msgstr "Durée du consentement"
+
+msgid "days"
+msgstr "jours"
+
+msgid "Consent lifetime in days"
+msgstr "Durée du consentement en jours"
+
+msgid "Use an internal path starting with / or a full http(s) URL."
+msgstr "Indiquez un chemin interne commençant par / ou une adresse http(s) complète."
+
+msgid "The measurement ID looks like G-XXXXXXXXXX."
+msgstr "L'identifiant de mesure a la forme G-XXXXXXXXXX."

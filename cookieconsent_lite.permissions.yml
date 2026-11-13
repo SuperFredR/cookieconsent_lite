@@ -1,0 +1,3 @@
+administer cookieconsent lite:
+  title: 'Administer the cookie consent banner'
+  restrict access: true

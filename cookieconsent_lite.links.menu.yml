@@ -1,0 +1,5 @@
+cookieconsent_lite.settings:
+  title: 'Cookie Consent Lite'
+  description: 'Banner texts and Google Analytics 4 measurement ID.'
+  route_name: cookieconsent_lite.settings
+  parent: system.admin_config_system

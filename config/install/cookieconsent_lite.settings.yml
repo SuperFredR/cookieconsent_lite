@@ -1,0 +1,9 @@
+langcode: en
+title: 'Fancy a cookie?'
+message: 'We use cookies to measure site traffic. Do you accept them?'
+accept_text: Accept
+decline_text: Decline
+read_more_text: 'Read more'
+read_more_url: ''
+expiry_days: 365
+measurement_id: ''
